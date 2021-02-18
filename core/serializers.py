@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
 from django.contrib.auth.models import User
 
-class UserSerializers(serializers.ModelSerializer):
+class UserSerializer(serializer.ModelSerializer):
 
     class Meta:
         model = User
