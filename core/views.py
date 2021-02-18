@@ -1,10 +1,10 @@
 from django.http import HttpResponseRedirect
-from djangp.contrib.auth.models import User
+from django.contrib.auth.models import User
 from rest_framework import permissions, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import UserSerilizer, UserSerializerWithToken
+from .serializers import UserSerializer, UserSerializerWithToken
 # Create your views here.
 
 @api_view(['GET'])

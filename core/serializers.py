@@ -2,16 +2,16 @@ from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
 from django.contrib.auth.models import User
 
-class UserSerializer(serializer.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
         fields = ('username',)
 
-class UserSerializerWithToken(serializer.ModelSerializer):
+class UserSerializerWithToken(serializers.ModelSerializer):
 
     token = serializers.SerializerMethodField()
-    password = serializer.CharField(write_only=True)
+    password = serializers.CharField(write_only=True)
 
     def get_token(self, obi):
         jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
